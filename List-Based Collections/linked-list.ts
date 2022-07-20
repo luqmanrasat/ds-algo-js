@@ -71,13 +71,14 @@ class LinkedList {
       }
 
       prev = current;
-      current = current.next;
+      current = current.next as ListNode;
     }
 
     if (!prev) {
       return (this.head = next);
     }
 
+    current.next = undefined;
     prev.next = next;
   }
 }
